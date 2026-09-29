@@ -7,11 +7,11 @@ public class ScarySequence : MonoBehaviour
     public Light lightSource;
     public GameObject ligthBulb;
     public bool hasHappened;
-    public GameObject enemy;
+   // public GameObject enemy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        enemy.gameObject.SetActive(false);
+        //enemy.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
