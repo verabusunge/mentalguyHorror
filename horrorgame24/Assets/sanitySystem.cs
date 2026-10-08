@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class sanitySystem : MonoBehaviour
@@ -26,6 +27,11 @@ public class sanitySystem : MonoBehaviour
         {
             StartCoroutine(GameOver());
         }
+
+        if (Keyboard.current.pKey.isPressed)
+        {
+            StartCoroutine(GameOver());
+        }
     }
 
 
@@ -34,7 +40,7 @@ public class sanitySystem : MonoBehaviour
         playerAnim.SetTrigger("GameOver");
         yield return new WaitForSeconds(2);
         gameOverPanelAnim.SetTrigger("Fade");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
         deadScreen.gameObject.SetActive(true);
 
     }
@@ -44,4 +50,5 @@ public class sanitySystem : MonoBehaviour
         SceneManager.LoadScene(0);
     }
    
+    
 }

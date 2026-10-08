@@ -7,6 +7,7 @@ public class ScarySequence : MonoBehaviour
     public Light lightSource;
     public GameObject ligthBulb;
     public bool hasHappened;
+    public sanitySystem sanitySystemScript;
    // public GameObject enemy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
