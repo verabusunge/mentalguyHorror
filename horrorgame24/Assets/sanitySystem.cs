@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class sanitySystem : MonoBehaviour
 {
@@ -36,6 +37,11 @@ public class sanitySystem : MonoBehaviour
         yield return new WaitForSeconds(3);
         deadScreen.gameObject.SetActive(true);
 
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
     }
    
 }
