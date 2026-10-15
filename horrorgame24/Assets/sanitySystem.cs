@@ -12,11 +12,15 @@ public class sanitySystem : MonoBehaviour
     public Animator playerAnim;
     public GameObject deadScreen;
     public Animator gameOverPanelAnim;
+    public GameObject blinkUI;
+    public Animator blinkAnimator;
+    public bool isBlinking;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sanity = maxSanity;
         deadScreen.gameObject.SetActive(false);
+        isBlinking = false;
 
     }
 
@@ -31,6 +35,12 @@ public class sanitySystem : MonoBehaviour
         if (Keyboard.current.pKey.isPressed)
         {
             StartCoroutine(GameOver());
+        }
+
+        if (Mouse.current.rightButton.isPressed)
+        {
+            isBlinking = false;
+
         }
     }
 
