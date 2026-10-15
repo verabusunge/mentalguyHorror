@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class sanitySystem : MonoBehaviour
@@ -15,8 +16,11 @@ public class sanitySystem : MonoBehaviour
     public Animator gameOverPanelAnim;
     public GameObject blinkUI;
     public Animator blinkAnimator;
+    
     public bool isBlinking;
-    [SerializeField] public Slider sanityMeter;
+    
+    [SerializeField] public UnityEngine.UI.Slider sanityMeter;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,6 +50,10 @@ public class sanitySystem : MonoBehaviour
         {
             isBlinking = true;
 
+        }
+        if (Mouse.current.rightButton.wasReleasedThisFrame)
+        {
+            isBlinking = false;
         }
     }
 

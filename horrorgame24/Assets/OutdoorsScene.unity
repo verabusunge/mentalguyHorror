@@ -5782,7 +5782,7 @@ GameObject:
   - component: {fileID: 529291598}
   - component: {fileID: 529291599}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: UnitySanity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19762,6 +19762,7 @@ MonoBehaviour:
   blinkUI: {fileID: 0}
   blinkAnimator: {fileID: 0}
   isBlinking: 0
+  sanityMeter: {fileID: 529291599}
 --- !u!1 &1733580648
 GameObject:
   m_ObjectHideFlags: 0
