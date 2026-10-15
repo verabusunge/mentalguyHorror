@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 
 public class Enemy : MonoBehaviour
 {
-    bool active;
+    public bool active;
     public sanitySystem sanitySystemCode;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,7 +16,8 @@ public class Enemy : MonoBehaviour
     {
         if (active == true & sanitySystemCode.isBlinking == false)
         {
-            sanitySystemCode.sanity -= 0.1f;
+            sanitySystemCode.sanity -= 10f * Time.deltaTime;
+            print(sanitySystemCode.sanity);
         }
     }
 }

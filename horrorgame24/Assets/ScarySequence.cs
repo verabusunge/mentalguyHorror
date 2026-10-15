@@ -8,11 +8,13 @@ public class ScarySequence : MonoBehaviour
     public GameObject ligthBulb;
     public bool hasHappened;
     public sanitySystem sanitySystemScript;
-   // public GameObject enemy;
+    public GameObject enemyPrefab;
+    public Enemy enemyScript;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //enemy.gameObject.SetActive(false);
+        enemyPrefab.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,7 +38,8 @@ public class ScarySequence : MonoBehaviour
 
     public IEnumerator ScaryEventStart()
     {
-           
+        enemyPrefab.gameObject.SetActive(true);
+        enemyScript.active = true;
 
         for (int i = 0; i < 6; i++)
         {
@@ -57,6 +60,8 @@ public class ScarySequence : MonoBehaviour
             ligthBulb.gameObject.SetActive(true);
 
         }
+        enemyPrefab.SetActive(false);
+        enemyScript.active = false;
 
     }
 }

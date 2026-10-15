@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class sanitySystem : MonoBehaviour
 {
@@ -15,18 +16,22 @@ public class sanitySystem : MonoBehaviour
     public GameObject blinkUI;
     public Animator blinkAnimator;
     public bool isBlinking;
+    [SerializeField] public Slider sanityMeter;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sanity = maxSanity;
         deadScreen.gameObject.SetActive(false);
         isBlinking = false;
+        sanityMeter.value = maxSanity;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        sanityMeter.value = sanity;
         if (sanity <= minSanity)
         {
             StartCoroutine(GameOver());
@@ -39,7 +44,7 @@ public class sanitySystem : MonoBehaviour
 
         if (Mouse.current.rightButton.isPressed)
         {
-            isBlinking = false;
+            isBlinking = true;
 
         }
     }
